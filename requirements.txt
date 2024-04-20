@@ -1,5 +1,6 @@
 numpy
 matplotlib
+seaborn
 scikit-learn
 pandas
 click==8.1.3
