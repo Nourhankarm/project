@@ -24,8 +24,7 @@ def get_detections():
     print(f"prediction: {prediction}")
     return jsonify({'diabetes_prediction': int(prediction[0])})
   
-    except FileNotFoundError:
-        abort(404)
+
 
 
 if __name__ == '__main__':
