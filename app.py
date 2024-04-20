@@ -20,23 +20,10 @@ def get_detections():
     print(data["gender"])
     features = [data['gender'], data['age'], data['hypertension'], data['heart_disease'],
                 data['smoking_history'], data['bmi'], data['HbA1c_level'], data['blood_glucose_level']]
-    prediction = rf.predict([features])
+    prediction = model.predict([features])
+    print(f"prediction: {prediction}")
     return jsonify({'diabetes_prediction': int(prediction[0])})
-        
-
-      # Log received data
-        print(f"data received: gender= {data['gender']}, age= {age}, hypertension= {hypertension}, heart_disease={heart_disease}, smoking_history= {data['smoking_history']}, bmi= {bmi}, HbA1c_level= {HbA1c_level}, blood_glucose_level= {blood_glucose_level}")
-
-        # Prepare the model input by replacing 'gender' and 'smoking_history' with their encoded forms
-        model_input = np.array([[encoded_gender, age, hypertension, heart_disease, encoded_smoking_history, bmi, HbA1c_level, blood_glucose_level]])
-
-        # Make prediction
-        prediction = model.predict(model_input)
-
-        # Log and return the prediction
-        print(f"prediction: {prediction}")
-        return jsonify({"prediction": int(prediction[0])})
-
+  
     except FileNotFoundError:
         abort(404)
 
