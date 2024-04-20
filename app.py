@@ -144,9 +144,9 @@ diabetes_data.hist(figsize=(8,8), color='purple')
 # In[18]:
 
 
-plt.figure(figsize=(9,7))
-correlation=diabetes_data.corr()
-sns.heatmap(correlation,annot=True ,fmt='.2f' ,cbar=True ,cmap='summer')
+#plt.figure(figsize=(9,7))
+#correlation=diabetes_data.corr()
+#sns.heatmap(correlation,annot=True ,fmt='.2f' ,cbar=True ,cmap='summer')
 
 
 # In[19]:
