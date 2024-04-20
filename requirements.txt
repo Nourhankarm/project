@@ -1,4 +1,5 @@
 numpy
+matplotlib
 scikit-learn
 pandas
 click==8.1.3
