@@ -22,14 +22,9 @@ def get_detections():
                 data['smoking_history'], data['bmi'], data['HbA1c_level'], data['blood_glucose_level']]
     prediction = rf.predict([features])
     return jsonify({'diabetes_prediction': int(prediction[0])})
-
-     print(f"data received: gender= {data['gender']}, age= {age}, hypertension= {hypertension}, heart_disease= {heart_disease}, smoking_history= {data['smoking_history']}, bmi= {bmi}, HbA1c_level= {HbA1c_level}, blood_glucose_level= {blood_glucose_level}")
-        #gender' and 'smoking_history' are categorical and need to be encoded
-        print(encoder.classes_)
-        
         
 
-        # Log received data
+      # Log received data
         print(f"data received: gender= {data['gender']}, age= {age}, hypertension= {hypertension}, heart_disease={heart_disease}, smoking_history= {data['smoking_history']}, bmi= {bmi}, HbA1c_level= {HbA1c_level}, blood_glucose_level= {blood_glucose_level}")
 
         # Prepare the model input by replacing 'gender' and 'smoking_history' with their encoded forms
